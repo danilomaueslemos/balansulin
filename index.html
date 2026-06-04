@@ -1,223 +1,340 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Informazioni sul Benessere</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      color: #222;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nuova Formula Naturale in Italia</title>
 
-    .topbar {
-      background: #ffffff;
-      padding: 14px 20px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
+<style>
 
-    .logo {
-      font-size: 22px;
-      font-weight: bold;
-      color: #2d6cdf;
-    }
+body{
+margin:0;
+padding:0;
+font-family:Arial,sans-serif;
+background:#f4f4f4;
+color:#222;
+}
 
-    .container {
-      max-width: 760px;
-      margin: 30px auto;
-      background: #fff;
-      padding: 30px;
-      border-radius: 14px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-    }
+.topbar{
+background:#ffffff;
+padding:15px 20px;
+box-shadow:0 2px 8px rgba(0,0,0,0.08);
+position:sticky;
+top:0;
+z-index:99;
+}
 
-    h1 {
-      font-size: 32px;
-      line-height: 1.3;
-      margin-bottom: 20px;
-    }
+.logo{
+font-size:24px;
+font-weight:bold;
+color:#2b6be0;
+}
 
-    .subtitle {
-      color: #666;
-      font-size: 18px;
-      margin-bottom: 30px;
-    }
+.container{
+max-width:760px;
+margin:30px auto;
+background:#fff;
+padding:30px;
+border-radius:14px;
+box-shadow:0 4px 14px rgba(0,0,0,0.08);
+}
 
-    .image {
-      width: 100%;
-      border-radius: 12px;
-      margin-bottom: 25px;
-    }
+.badge{
+display:inline-block;
+background:#e8f0ff;
+color:#2b6be0;
+padding:8px 14px;
+border-radius:30px;
+font-size:14px;
+font-weight:bold;
+margin-bottom:18px;
+}
 
-    p {
-      font-size: 18px;
-      line-height: 1.7;
-      margin-bottom: 20px;
-    }
+h1{
+font-size:34px;
+line-height:1.3;
+margin-bottom:20px;
+}
 
-    .cta {
-      text-align: center;
-      margin-top: 35px;
-    }
+.subtitle{
+font-size:19px;
+color:#666;
+line-height:1.6;
+margin-bottom:25px;
+}
 
-    .cta a {
-      background: #2d6cdf;
-      color: white;
-      text-decoration: none;
-      padding: 18px 34px;
-      font-size: 20px;
-      border-radius: 10px;
-      display: inline-block;
-      transition: 0.2s;
-      font-weight: bold;
-    }
+.hero{
+width:100%;
+border-radius:12px;
+margin-bottom:25px;
+}
 
-    .cta a:hover {
-      opacity: 0.9;
-    }
+p{
+font-size:18px;
+line-height:1.7;
+margin-bottom:22px;
+}
 
-    .cookie-box {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: white;
-      box-shadow: 0 -2px 12px rgba(0,0,0,0.15);
-      padding: 20px;
-      z-index: 999;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 15px;
-    }
+.offer{
+background:#fff4e5;
+border:2px dashed #ff9900;
+padding:20px;
+border-radius:12px;
+margin:30px 0;
+text-align:center;
+}
 
-    .cookie-text {
-      flex: 1;
-      min-width: 260px;
-      font-size: 14px;
-      color: #444;
-      line-height: 1.5;
-    }
+.old-price{
+font-size:22px;
+text-decoration:line-through;
+color:#888;
+}
 
-    .cookie-buttons {
-      display: flex;
-      gap: 10px;
-    }
+.new-price{
+font-size:42px;
+font-weight:bold;
+color:#e53935;
+margin-top:10px;
+}
 
-    .cookie-buttons button {
-      padding: 12px 18px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: bold;
-    }
+.delivery{
+margin-top:10px;
+font-size:17px;
+color:#333;
+}
 
-    .accept {
-      background: #2d6cdf;
-      color: white;
-    }
+.cta{
+text-align:center;
+margin-top:35px;
+}
 
-    .decline {
-      background: #ececec;
-      color: #333;
-    }
+.cta a{
+background:#2b6be0;
+color:white;
+text-decoration:none;
+padding:18px 36px;
+font-size:22px;
+font-weight:bold;
+border-radius:10px;
+display:inline-block;
+transition:0.2s;
+}
 
-    .footer {
-      text-align: center;
-      color: #777;
-      font-size: 13px;
-      margin-top: 40px;
-    }
+.cta a:hover{
+opacity:0.9;
+}
 
-    @media(max-width: 768px){
-      h1 {
-        font-size: 26px;
-      }
+.reviews{
+background:#fafafa;
+padding:20px;
+border-radius:12px;
+margin-top:30px;
+}
 
-      p {
-        font-size: 17px;
-      }
+.review{
+margin-bottom:18px;
+}
 
-      .container {
-        margin: 10px;
-        padding: 22px;
-      }
-    }
-  </style>
+.review strong{
+display:block;
+margin-bottom:6px;
+}
+
+.footer{
+margin-top:40px;
+font-size:13px;
+color:#777;
+text-align:center;
+line-height:1.6;
+}
+.footer a{
+color:#2b6be0;
+text-decoration:none;
+}
+
+.footer a:hover{
+text-decoration:underline;
+}
+.cookie-box{
+position:fixed;
+bottom:0;
+left:0;
+right:0;
+background:white;
+padding:20px;
+box-shadow:0 -2px 12px rgba(0,0,0,0.15);
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:15px;
+z-index:999;
+flex-wrap:wrap;
+}
+
+.cookie-text{
+font-size:14px;
+color:#444;
+line-height:1.5;
+flex:1;
+min-width:260px;
+}
+
+.cookie-buttons{
+display:flex;
+gap:10px;
+}
+
+.cookie-buttons button{
+padding:12px 18px;
+border:none;
+border-radius:8px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.accept{
+background:#2b6be0;
+color:white;
+}
+
+.decline{
+background:#ececec;
+color:#333;
+}
+
+@media(max-width:768px){
+
+.container{
+margin:10px;
+padding:22px;
+}
+
+h1{
+font-size:28px;
+}
+
+p{
+font-size:17px;
+}
+
+.new-price{
+font-size:36px;
+}
+
+}
+
+</style>
 </head>
+
 <body>
 
-  <div class="topbar">
-    <div class="logo">Health Daily</div>
-  </div>
+<div class="topbar">
+<div class="logo">Health Italia</div>
+</div>
 
-  <div class="container">
+<div class="container">
 
-    <h1>Nuova soluzione naturale discussa online in Italia</h1>
+<div class="badge">
+OFFERTA DISPONIBILE IN ITALIA
+</div>
 
-    <div class="subtitle">
-      Sempre più persone cercano alternative pratiche per supportare il proprio benessere quotidiano.
-    </div>
+<h1>
+Sempre più italiani parlano di questa formula naturale
+</h1>
 
-    <img class="image" src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=1200&auto=format&fit=crop" alt="Healthy Lifestyle">
+<div class="subtitle">
+Una soluzione pratica pensata per accompagnare il benessere quotidiano e l’equilibrio metabolico.
+</div>
 
-    <p>
-      Negli ultimi mesi, diversi utenti italiani hanno iniziato a parlare di Balansulin e del suo utilizzo nella routine quotidiana.
-    </p>
+<img class="hero" src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=1200&auto=format&fit=crop" alt="Benessere">
 
-    <p>
-      Il prodotto è stato menzionato in forum e community dedicate al benessere grazie alla sua formula composta da ingredienti selezionati.
-    </p>
+<p>
+Negli ultimi mesi, Balansulin ha attirato l’attenzione di molte persone in Italia grazie alla sua formula composta da ingredienti selezionati e vitamine essenziali.
+</p>
 
-    <p>
-      Molti utenti dichiarano di apprezzare soprattutto la semplicità d'uso e l'integrazione nella propria alimentazione giornaliera.
-    </p>
+<p>
+Diversi utenti apprezzano soprattutto la semplicità d’uso e la possibilità di integrarlo facilmente nella routine quotidiana.
+</p>
 
-    <p>
-      Prima di acquistare qualsiasi prodotto, è sempre consigliabile leggere attentamente tutte le informazioni ufficiali disponibili.
-    </p>
+<p>
+Secondo le informazioni pubbliche disponibili online, il prodotto è attualmente disponibile con uno sconto promozionale e consegna rapida in tutta Italia.
+</p>
 
-    <div class="cta">
-      <a href="https://it2.balansulin.com/?utm_source=269741">SCOPRI DI PIÙ</a>
-    </div>
+<div class="offer">
 
-    <div class="footer">
-      Advertorial informativo. Questo sito non fornisce consulenza medica.
-    </div>
+<div class="old-price">
+78€
+</div>
 
-  </div>
+<div class="new-price">
+39€
+</div>
 
-  <div class="cookie-box" id="cookieBox">
-    <div class="cookie-text">
-      Utilizziamo cookie per migliorare la tua esperienza di navigazione, personalizzare contenuti e analizzare il traffico del sito.
-    </div>
-
-    <div class="cookie-buttons">
-      <button class="decline" onclick="closeCookies()">Rifiuta</button>
-      <button class="accept" onclick="closeCookies()">Accetta</button>
-    </div>
-  </div>
-
-  <script>
-    function closeCookies() {
-      document.getElementById('cookieBox').style.display = 'none';
-    }
-  </script>
-<div style="text-align:center;margin-top:40px;font-size:13px;color:#777;line-height:1.8;">
-
-<a href="privacy.html">Privacy Policy</a> |
-<a href="terms.html">Terms of Use</a> |
-<a href="contact.html">Contact</a>
+<div class="delivery">
+✔ Consegna rapida 24/72h<br>
+✔ Pagamento sicuro<br>
+✔ Offerta limitata
+</div>
 
 </div>
+
+<div class="cta">
+<a href="https://it2.balansulin.com/?utm_source=269741" rel="nofollow sponsored">
+SCOPRI L'OFFERTA
+</a>
+</div>
+
+<div class="reviews">
+
+<div class="review">
+<strong>Marco, Milano</strong>
+“Consegna veloce e utilizzo molto semplice nella routine quotidiana.”
+</div>
+
+<div class="review">
+<strong>Giulia, Roma</strong>
+“Ho apprezzato soprattutto la formula naturale e la praticità.”
+</div>
+
+<div class="review">
+<strong>Luca, Napoli</strong>
+“Ordine arrivato rapidamente e confezione ben sigillata.”
+</div>
+
+</div>
+
+<div class="footer">
+Advertorial informativo.<br>
+Balansulin è un integratore alimentare.<br>
+I risultati possono variare da persona a persona.<br>
+Questo sito non fornisce consulenza medica.<br><br>
+
+<a href="/privacy.html">Privacy Policy</a> |
+<a href="/contact.html">Contact</a> |
+<a href="/terms.html">Terms & Conditions</a>
+</div>
+</div> <!-- fecha container -->
+
+<div class="cookie-box" id="cookieBox">
+
+<div class="cookie-text">
+Utilizziamo cookie per migliorare l’esperienza di navigazione, personalizzare contenuti e analizzare il traffico del sito.
+</div>
+
+<div class="cookie-buttons">
+<button class="decline" onclick="closeCookies()">Rifiuta</button>
+<button class="accept" onclick="closeCookies()">Accetta</button>
+</div>
+
+</div>
+
+<script>
+
+function closeCookies(){
+document.getElementById('cookieBox').style.display='none';
+}
+
+</script>
+
 </body>
 </html>
